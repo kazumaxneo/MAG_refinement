@@ -15,7 +15,7 @@ Three isolated genome assembler was used to reassembling bins.
 - SPAdes v3.15
 - Unicycler v5  
 <br><br>
-## Instalation  
+## Installation  
 
 ```
 git clone https://github.com/kazumaxneo/c.git
