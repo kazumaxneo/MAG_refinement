@@ -1,6 +1,6 @@
 # MAG_refinement
   
-MAG sequences derived from short and long sequencing reads consist of fragmented contigs that are broken at hundreds of positions within the genome. Gene prediction is significantly impacted by such fragmented draft genome sequences. This script aims to improve the contiguity of MAGs by reassembling bins using an isolated genome assembler with a combination of properly mapped HiFi long reads and short reads aligned to the bin sequences. The reassembly is orignally reported by metaWRAP team. They used SPAdes assembler with isolated genome mode for to reconsturuct more accurate MAG than original bin.  
+MAG sequences derived from short and long sequencing reads consist of fragmented contigs that are broken at hundreds of positions within the genome. Gene prediction is significantly impacted by such fragmented draft genome sequences. This script aims to improve the contiguity of MAGs by reassembling bins using an isolated genome assembler with a combination of properly mapped HiFi long reads and short reads aligned to the bin sequences. The reassembly is orignally reported by metaWRAP team. They used SPAdes assembler with isolated genome mode to improve the assembly statistics.  
 The script is compatible with datasets that have already undergone hybrid assembly using tools like metaSPAdes or OPERA-MS.
 
 
