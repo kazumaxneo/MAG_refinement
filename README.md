@@ -21,8 +21,9 @@ First, each bin related short and long sequencing reads are collected from whole
 git clone https://github.com/kazumaxneo/c.git
 mamba env create --file MAG_refinement/env.yaml
 conda activate binrefinemnet
+chmod +x MAG_refinement/Bin_refinement.py
 export PATH=$PATH:$PWD/MAG_refinement/
-python MAG_refinement/Bin_refinement.py -h
+Bin_refinement.py -h
 ```
 <br>
   
