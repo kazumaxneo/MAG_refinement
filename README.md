@@ -1,14 +1,15 @@
 # MAG_refinement
   
-MAG sequences derived from short and long sequencing reads consist of fragmented contigs that are broken at hundreds of positions within the genome. Gene prediction is significantly impacted by such fragmented draft genome sequences. This script aims to improve the contiguity of MAGs by reassembling bins using an isolated genome assembler with a combination of properly mapped HiFi long reads and short reads aligned to the bin sequences. The script is compatible with datasets that have already undergone hybrid assembly using tools like metaSPAdes or OPERA-MS.
+MAG sequences derived from short and long sequencing reads consist of fragmented contigs that are broken at hundreds of positions within the genome. Gene prediction is significantly impacted by such fragmented draft genome sequences. This script aims to improve the contiguity of MAGs by reassembling bins using an isolated genome assembler with a combination of properly mapped HiFi long reads and short reads aligned to the bin sequences. The reassembly is orignally reported by metaWRAP team. They used SPAdes assembler with isolated genome mode for to reconsturuct more accurate MAG than original bin.  
+The script is compatible with datasets that have already undergone hybrid assembly using tools like metaSPAdes or OPERA-MS.
 
 
 
 ## Workflow
 Short and long sequencing reads for each bin are extracted from the whole metagenome shotgun sequencing data.  
 1. For short reads, Bowtie2 is used with the "--al-conc option and a normal insert size" to collect properly aligned short reads.
-2. For HiFi long reads, Minimap2 is used with the "-x map-hifi" option. High-quality mapped reads (MAPQ > 20) are retained.　Then highly clipped alignments are filtered using the samclip program.
-3. The filtered reads are then used for further analysis. Each bin is reassembled using three different isolated genome assemblers to improve contiguity.  
+2. For HiFi long reads, Minimap2 is used with the "-x map-hifi" option. High-quality mapped reads (MAPQ > 20) are retained. Then highly clipped alignments are filtered using the samclip program.
+3. Each bin is reassembled using three different isolated genome assemblers to improve contiguity.  
 
 - Unicycler (hybrid assembly)
 - SPAdes (hybrid assembly)
