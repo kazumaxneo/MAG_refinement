@@ -1,12 +1,20 @@
 # MAG_refinement
   
-MAG sequences derived from short (and long) sequencing reads consist of a set of fragmented contigs that are broken at hundreds of positions within the genome. Gene prediction is severely impacted by such fragmented draft genome sequences. This script aims to improve the contiguity of MAGs by reassembling bins using isolated genome assembler with a combination of properly mapped HiFi long reads and short reads against bin sequence.<br><br>  
-First, each bin related short and long sequencing reads are collected from whole metagenome sequencing reads. Then,three isolated genome assembler is used to reassembling each bin.
-1. Unicycler (hybrid assembly)
-2. SPAdes (hybrid assembly)
-3. Flye (HiFi long reads assembly)
+MAG sequences derived from short and long sequencing reads consist of fragmented contigs that are broken at hundreds of positions within the genome. Gene prediction is significantly impacted by such fragmented draft genome sequences. This script aims to improve the contiguity of MAGs by reassembling bins using an isolated genome assembler with a combination of properly mapped HiFi long reads and short reads aligned to the bin sequences. The script is compatible with datasets that have already undergone hybrid assembly using tools like metaSPAdes or OPERA-MS.
+
+
+
+## Workflow
+Short and long sequencing reads for each bin are extracted from the whole metagenome shotgun sequencing data.  
+1. For short reads, Bowtie2 is used with the "--al-conc option and a normal insert size" to collect properly aligned short reads.
+2. For HiFi long reads, Minimap2 is used with the "-x map-hifi" option. High-quality mapped reads (MAPQ > 20) are retained.　Then highly clipped alignments are filtered using the samclip program.
+3. The filtered reads are then used for further analysis. Each bin is reassembled using three different isolated genome assemblers to improve contiguity.  
+
+- Unicycler (hybrid assembly)
+- SPAdes (hybrid assembly)
+- Flye (HiFi long reads assembly)
 <br><br>
-## Requirements  
+## Dependency  
 - SAMTools
 - Bowtie2 
 - samclip
@@ -14,7 +22,13 @@ First, each bin related short and long sequencing reads are collected from whole
 - Flye v2.9
 - SPAdes v3.15
 - Unicycler v5  
-<br><br>
+
+## Requirements (file)
+- bin.fa files
+- HiFi sequenicng reads (used for metagenome assebly)
+- Paired-end short rewad (used for metagenome assebly)
+  
+
 ## Installation  
 
 ```
@@ -25,15 +39,15 @@ chmod +x MAG_refinement/Bin_refinement.py
 export PATH=$PATH:$PWD/MAG_refinement/
 Bin_refinement.py -h
 ```
-<br>
-  
+
+
 ## Usage  
 Run where bin fasta file is located. Paired-end short reads and HiFi long reads are necessary. Output direcctory for properly mapped short reads and long reads and refinned bin must be specified. This script recognises the ".fa" extension.
 ```
 python Bin_refinement.py --reads1 short_R1.fastq.gz --reads2 short_R2.fastq.gz --pacbio HiF_reads.fq.gz --hifi_mapped_dir HIFI_saved_dir --sr_dir short_reads_saved_dir --refined_bin_dir refined_bin_dir
 ```
 
-<br>
+
 ## Options
 
 - **`-h, --help`**  
@@ -58,6 +72,10 @@ python Bin_refinement.py --reads1 short_R1.fastq.gz --reads2 short_R2.fastq.gz -
   Output directory for refined assemblies.  
 
 <br><br>
+## Warnings
+This script performs well only when contamination is minimal to avoid connecting contaminated contigs. It is recommended that CheckM contamination values be less than 5%.
+<br><br>
+
 ## How to cite  
 These tool should be cited.<br> 
 - Bankevich A, Nurk S, Antipov D, Gurevich AA, Dvorkin M, Kulikov AS, Lesin VM, Nikolenko SI, Pham S, Prjibelski AD, Pyshkin AV, Sirotkin AV, Vyahhi N, Tesler G, Alekseyev MA, Pevzner PA. SPAdes: a new genome assembly algorithm and its applications to single-cell sequencing. J Comput Biol. 2012 May;19(5):455-77. doi: 10.1089/cmb.2012.0021. Epub 2012 Apr 16. PMID: 22506599; PMCID: PMC3342519.  
