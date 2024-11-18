@@ -1,14 +1,13 @@
 # MAG_refinement
   
-MAG sequences derived from short and long sequencing reads consist of fragmented contigs that are broken at hundreds of positions within the genome. Gene prediction is significantly impacted by such fragmented draft genome sequences. This script aims to improve the contiguity of MAGs by reassembling bins using an isolated genome assembler with a combination of properly mapped HiFi long reads and short reads aligned to the bin sequences. The reassembly is orignally reported by metaWRAP team. They used SPAdes assembler with isolated genome mode to improve the assembly statistics.  
-The script is compatible with datasets that have already undergone hybrid assembly using tools like metaSPAdes or OPERA-MS.
+Binned fasta sequences derived from the binning of raw metagenomic assembly consist of fragmented contigs that are broken at hundreds of positions within the genome. Gene prediction is significantly impacted by such fragmented draft genome sequences. This script aims to improve the contiguity of each bin (MAG) sequnece by reassembling bin using an isolated genome assembler with a combination of properly mapped HiFi long reads and short reads aligned to each bin sequence. The reassembly is orignally reported by doi: 10.1038/nbt.2579 or metaWRAP team. MetaWRAP team used SPAdes assembler with isolated genome mode to reassemble each bin's reads and to improve the assembly statistics.  
+This script is compatible with dataset that have already undergone hybrid assembly using tools like metaSPAdes or OPERA-MS or short read assembly (not sure for long read only assembly.).
 
 
-
-## Workflow
-Short and long sequencing reads for each bin are extracted from the whole metagenome shotgun sequencing data.  
-1. For short reads, Bowtie2 is used with the "--al-conc option and a normal insert size" to collect properly aligned short reads.
-2. For HiFi long reads, Minimap2 is used with the "-x map-hifi" option. High-quality mapped reads (MAPQ > 20) are retained. Then highly clipped alignments are filtered using the samclip program.
+##  Workflow
+Short and long sequencing reads seqencing each bin are extracted from the whole metagenome shotgun sequencing data.  
+1. For short reads, Bowtie2 is used with the "--al-conc option and a normal insert size" to collect properly aligned short reads against bin sequnece.
+2. For HiFi long reads, Minimap2 is used with the "-x map-hifi" option. High-quality mapping (MAPQ > 20) and no clipping reads (<100-bp) are retained.
 3. Each bin is reassembled using three different isolated genome assemblers to improve contiguity.  
 
 - Unicycler (hybrid assembly)
