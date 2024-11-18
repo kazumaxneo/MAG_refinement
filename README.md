@@ -5,9 +5,9 @@ This script is compatible with dataset that have already undergone hybrid assemb
 
 
 ##  Workflow
-Short and long sequencing reads seqencing each bin are extracted from the whole metagenome shotgun sequencing data.  
+Short and long reads related to each bin are extracted from whole metagenome shotgun sequencing reads.  
 1. For short reads, Bowtie2 is used with the "--al-conc option and a normal insert size" to collect properly aligned short reads against bin sequnece.
-2. For HiFi long reads, Minimap2 is used with the "-x map-hifi" option. High-quality mapping (MAPQ > 20) and no clipping reads (<100-bp) are retained.
+2. For HiFi long reads, Minimap2 is used with the "-x map-hifi" option. High-quality mapping (MAPQ > 20) and small clipped alignment reads (less than 100-bp) are retained.
 3. Each bin is reassembled using three different isolated genome assemblers to improve contiguity.  
 
 - Unicycler (hybrid assembly)
@@ -42,7 +42,7 @@ Bin_refinement.py -h
 
 
 ## Usage  
-Run where bin fasta file is located. Paired-end short reads and HiFi long reads are necessary. Output direcctory for properly mapped short reads and long reads and refinned bin must be specified. This script recognises the ".fa" extension.
+Run where bin fasta file is located. Paired-end short reads and HiFi long reads are necessary. Output direcctory for properly mapped short reads(--sr_dir), long reads (--hifi_mapped_dir) and refinned bin (--refined_bin_dir) must be specified. This script recognises the file with ".fa" extension in the current PATH.
 ```
 python Bin_refinement.py --reads1 short_R1.fastq.gz --reads2 short_R2.fastq.gz --pacbio HiF_reads.fq.gz --hifi_mapped_dir HIFI_saved_dir --sr_dir short_reads_saved_dir --refined_bin_dir refined_bin_dir
 ```
@@ -73,7 +73,7 @@ python Bin_refinement.py --reads1 short_R1.fastq.gz --reads2 short_R2.fastq.gz -
 
 <br><br>
 ## Warnings
-This script performs well only when contamination is minimal to avoid connecting contaminated contigs. It is recommended that CheckM contamination values be less than 5%.
+This script works well only when bin contamination is minimal. IF contaminated contig are exist, isolated genome assembler may bridge contaminated contigs and produce longer contamination. It is recommended that CheckM contamination values be less than 5%.
 <br><br>
 
 ## How to cite  
