@@ -32,7 +32,7 @@ Short and long reads related to each bin are extracted from whole metagenome sho
 ## Installation  
 
 ```
-git clone https://github.com/kazumaxneo/c.git
+git clone https://github.com/kazumaxneo/MAG_refinement.git
 mamba env create --file MAG_refinement/env.yaml
 conda activate binrefinemnet
 chmod +x MAG_refinement/Bin_refinement.py
