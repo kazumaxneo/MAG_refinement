@@ -25,8 +25,8 @@ Short and long reads related to each bin are extracted from whole metagenome sho
 
 ## Requirements (file)
 - bin.fa files
-- HiFi sequenicng reads (used for metagenome assebly)
-- Paired-end short rewad (used for metagenome assebly)
+- HiFi sequenicng reads (the one used for original assembly)
+- Paired-end short sequenicng reads (the one used for original assembly)
   
 
 ## Installation  
