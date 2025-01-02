@@ -42,9 +42,9 @@ Bin_refinement.py -h
 
 
 ## Usage  
-Run where bin fasta file is located. Paired-end short reads and HiFi long reads are necessary. Output direcctory for properly mapped short reads(--sr_dir), long reads (--hifi_mapped_dir) and refinned bin (--refined_bin_dir) must be specified. This script recognises the file with ".fa" extension in the current PATH.
+Run where bin fasta file is located. Paired-end short reads and HiFi long reads are necessary. Output direcctory for properly mapped short reads(--sr_dir), long reads (--hifi_mapped_dir) and refinned bin (--refined_bin_dir) must be specified. This script recognises the file with "bin*.fa" extension in the current PATH.
 ```
-python Bin_refinement.py --reads1 short_R1.fastq.gz --reads2 short_R2.fastq.gz --pacbio HiF_reads.fq.gz --hifi_mapped_dir HIFI_saved_dir --sr_dir short_reads_saved_dir --refined_bin_dir refined_bin_dir
+python Bin_refinement.py --read1 short_R1.fastq.gz --read2 short_R2.fastq.gz --pacbio HiF_reads.fq.gz --hifi_mapped_dir HIFI_saved_dir --sr_dir short_reads_saved_dir --refined_bin_dir refined_bin_dir
 ```
 
 
