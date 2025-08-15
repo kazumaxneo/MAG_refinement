@@ -74,26 +74,41 @@ Mapping logs are not displayed.
 ```
 ## Options
 
-- **`-h, --help`**  
-  Show this help message and exit.
+-h, --help
+Show this help message and exit.
 
-- **`--read1 READ1`**  
-  Path to the first paired-end read file.
+--read1 READ1
+Path to the first paired-end short-read file (R1).
 
-- **`--read2 READ2`**  
-  Path to the second paired-end read file.
+--read2 READ2
+Path to the second paired-end short-read file (R2).
 
-- **`--pacbio PACBIO`**  
-  Path to the PacBio reads file.
+--pacbio PACBIO
+Path to the PacBio HiFi (or CLR) long-read file.
 
-- **`--hifi_mapped_dir HIFI_MAPPED_DIR`**  
-  Output directory for HiFi mapped data.
+--hifi_mapped_dir HIFI_MAPPED_DIR
+Output directory for mapped HiFi reads.
 
-- **`--sr_dir SR_DIR`**  
-  Output directory for short-read mapped data.
+--sr_dir SR_DIR
+Output directory for mapped short reads.
 
-- **`--refined_bin_dir REFINED_BIN_DIR`**  
-  Output directory for refined assemblies.  
+--refined_bin_dir REFINED_BIN_DIR
+Output directory for refined bin assemblies.
+
+--mapq MAPQ
+Minimum mapping quality (MAPQ) threshold for read filtering.
+
+--hifi_preset HIFI_PRESET
+Preset option for minimap2 when mapping HiFi reads (e.g., hifi, map-pb).
+
+--ext EXT
+Extension of bin FASTA files to process (default: .fa).
+
+--jobs JOBS
+Number of bins to process in parallel.
+
+--max_total_threads MAX_TOTAL_THREADS
+Maximum total number of CPU threads to use across all parallel jobs.
 
 <br><br>
 ## Warnings
