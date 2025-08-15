@@ -63,9 +63,11 @@ python Bin_refinement.py --read1 short_R1.fastq.gz --read2 short_R2.fastq.gz --p
 
 ## parallel version
 Difference  
+Multiple assembler are runned in parallel (default 3 jobs).
+
 Individual assembler working directories are deleted after copying the final assembly to --refined_bin_dir.
 
-Flye is run iteratively in both HiFi and CLR modes.
+Flye is iteratively runned in CLR mode when run in HiFi mode are failed.
 
 Statistics files are saved after all assemblers have finished.
 
