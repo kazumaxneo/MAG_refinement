@@ -73,7 +73,7 @@ Statistics files are saved after all assemblers have finished.
 
 Mapping logs are not displayed.
 ```
-python Bin_refinement_parallel.py --read1 short_R1.fq.gz --read2 short_R2.fq.gz --pacbio HiF_reads.fq.gz --jobs 3 --max_total_threads 24
+python Bin_refinement_parallel.py --read1 short_R1.fq.gz --read2 short_R2.fq.gz --pacbio HiF_reads.fq.gz --jobs 3 --max_total_threads 24 --ext fa
 ```
 ## Options
 
