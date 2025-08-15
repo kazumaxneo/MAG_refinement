@@ -62,6 +62,7 @@ python Bin_refinement.py --read1 short_R1.fastq.gz --read2 short_R2.fastq.gz --p
 ```
 
 ## parallel version
+Difference  
 Individual assembler working directories are deleted after copying the final assembly to --refined_bin_dir.
 
 Flye is run iteratively in both HiFi and CLR modes.
@@ -70,7 +71,7 @@ Statistics files are saved after all assemblers have finished.
 
 Mapping logs are not displayed.
 ```
- python Bin_refinement_parallel.py --read1 short_R1.fq.gz --read2 short_R2.fq.gz --pacbio HiF_reads.fq.gz --jobs 3 --max_total_threads 24
+python Bin_refinement_parallel.py --read1 short_R1.fq.gz --read2 short_R2.fq.gz --pacbio HiF_reads.fq.gz --jobs 3 --max_total_threads 24
 ```
 ## Options
 
