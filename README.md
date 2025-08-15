@@ -87,28 +87,28 @@ Path to the second paired-end short-read file (R2).
 Path to the PacBio HiFi (or CLR) long-read file.
 
 --hifi_mapped_dir HIFI_MAPPED_DIR
-Output directory for mapped HiFi reads.
+Output directory for mapped HiFi reads (created when not existed in current path).
 
 --sr_dir SR_DIR
-Output directory for mapped short reads.
+Output directory for mapped short reads (created when not existed in current path).
 
 --refined_bin_dir REFINED_BIN_DIR
-Output directory for refined bin assemblies.
+Output directory for refined bin assemblies (created when not existed in current path).
 
 --mapq MAPQ
-Minimum mapping quality (MAPQ) threshold for read filtering.
+Minimum mapping quality (MAPQ) threshold for read filtering (default 20).
 
 --hifi_preset HIFI_PRESET
 Preset option for minimap2 when mapping HiFi reads (e.g., hifi, map-pb).
 
 --ext EXT
-Extension of bin FASTA files to process (default: .fa).
+Extension of bin FASTA files to process (default .fa).
 
 --jobs JOBS
-Number of bins to process in parallel.
+Number of assembler to process in parallel (default 3).
 
 --max_total_threads MAX_TOTAL_THREADS
-Maximum total number of CPU threads to use across all parallel jobs.
+Maximum total number of CPU threads to use across all parallel jobs  (default 20).
 
 <br><br>
 ## Warnings
