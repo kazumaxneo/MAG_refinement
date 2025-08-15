@@ -42,12 +42,36 @@ Bin_refinement.py -h
 
 
 ## Usage  
-Run where bin fasta file is located. Paired-end short reads and HiFi long reads are necessary. Output direcctory for properly mapped short reads(--sr_dir), long reads (--hifi_mapped_dir) and refinned bin (--refined_bin_dir) must be specified. This script recognises the file with "bin*.fa" extension in the current PATH.
+This script should be run in the directory containing users bin FASTA files.
+It detects files matching the pattern bin*.fa (or the extension specified by --ext).
+Required inputs
+
+Paired-end short reads (--read1 / --read2)
+
+PacBio HiFi long reads (--pacbio)
+
+Output directories (will be created if not present)
+
+--sr_dir : Directory to store properly mapped short reads
+
+--hifi_mapped_dir : Directory to store properly mapped HiFi long reads
+
+--refined_bin_dir : Directory to store refined bin assemblies
 ```
 python Bin_refinement.py --read1 short_R1.fastq.gz --read2 short_R2.fastq.gz --pacbio HiF_reads.fq.gz --hifi_mapped_dir HIFI_saved_dir --sr_dir short_reads_saved_dir --refined_bin_dir refined_bin_dir
 ```
 
+## parallel version
+Individual assembler working directories are deleted after copying the final assembly to --refined_bin_dir.
 
+Flye is run iteratively in both HiFi and CLR modes.
+
+Statistics files are saved after all assemblers have finished.
+
+Mapping logs are not displayed.
+```
+ python Bin_refinement_parallel.py --read1 short_R1.fq.gz --read2 short_R2.fq.gz --pacbio HiF_reads.fq.gz --jobs 3 --max_total_threads 24
+```
 ## Options
 
 - **`-h, --help`**  
