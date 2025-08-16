@@ -116,9 +116,9 @@ Maximum total number of CPU threads to use across all parallel jobs  (default 20
 <br><br>
 ## Benchmark
 complex soil dataset (HiFi long read and illumina short read)
-<p align="center"><img src="Table1.png" alt="workflow" width="800"></p>
+<p align="center"><img src="Table3.png" alt="workflow" width="900"></p>
 
-<p align="center"><img src="Table2.png" alt="workflow" width="800"></p>
+<p align="center"><img src="Table2.png" alt="workflow" width="900"></p>
 
 <br><br>
 ## Warnings
