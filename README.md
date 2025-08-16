@@ -114,6 +114,13 @@ Number of assembler to process in parallel (default 3).
 Maximum total number of CPU threads to use across all parallel jobs  (default 20).
 
 <br><br>
+## Benchmark
+complex soil dataset (HiFi long read and illumina short read)
+<p align="center"><img src="Table1.png" alt="workflow" width="800"></p>
+
+<p align="center"><img src="Table2.png" alt="workflow" width="800"></p>
+
+<br><br>
 ## Warnings
 This script works well only when bin contamination is minimal. IF contaminated contig are exist, isolated genome assembler may bridge contaminated contigs and produce longer contamination. It is recommended that CheckM contamination values be less than 5%.
 <br><br>
