@@ -28,7 +28,6 @@ Short and long reads related to each bin are extracted from whole metagenome sho
 - HiFi sequenicng reads (the one used for original assembly)
 - Paired-end short sequenicng reads (the one used for original assembly)
   
-
 ## Installation  
 
 ```
@@ -39,8 +38,6 @@ chmod +x MAG_refinement/Bin_refinement.py Bin_refinement_parallel.py
 export PATH=$PATH:$PWD/MAG_refinement/
 Bin_refinement.py -h
 ```
-
-
 ## Usage  
 This script should be run in the directory containing users bin FASTA files.
 It detects files matching the pattern bin*.fa (or the extension specified by --ext).
@@ -119,7 +116,6 @@ complex soil dataset (HiFi long read and illumina short read)
 <p align="center"><img src="Table11.png" alt="workflow" width="1100"></p>
 
 <p align="center"><img src="Table22.png" alt="workflow" width="1100"></p>
-
 
 <br><br>
 ## Test run (Note: this tiny dataset may fail in some assemblers, and some reassembled bins may become worse than the original.)
