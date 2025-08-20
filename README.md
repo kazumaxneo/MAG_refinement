@@ -133,8 +133,6 @@ python ../Bin_refinement_parallel.py \
   --max_total_threads 8 \
   --ext fa
 ```
-<br><br>
-
 
 <br><br>
 ## Warnings
