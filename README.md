@@ -35,7 +35,7 @@ Short and long reads related to each bin are extracted from whole metagenome sho
 git clone https://github.com/kazumaxneo/MAG_refinement.git
 mamba env create --file MAG_refinement/env.yaml
 conda activate binrefinemnet
-chmod +x MAG_refinement/Bin_refinement.py
+chmod +x MAG_refinement/Bin_refinement.py Bin_refinement_parallel.py
 export PATH=$PATH:$PWD/MAG_refinement/
 Bin_refinement.py -h
 ```
@@ -119,6 +119,22 @@ complex soil dataset (HiFi long read and illumina short read)
 <p align="center"><img src="Table11.png" alt="workflow" width="1100"></p>
 
 <p align="center"><img src="Table22.png" alt="workflow" width="1100"></p>
+
+
+<br><br>
+## Test run (Note: this tiny dataset may fail in some assemblers, and some reassembled bins may become worse than the original.)
+```
+cd test/
+python ../Bin_refinement_parallel.py \
+  --read1 sample_R1.fq.gz \
+  --read2 sample_R2.fq.gz \
+  --pacbio sample_HiFi.fq.gz \
+  --jobs 3 \
+  --max_total_threads 8 \
+  --ext fa
+```
+<br><br>
+
 
 <br><br>
 ## Warnings
