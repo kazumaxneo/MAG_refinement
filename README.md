@@ -129,7 +129,7 @@ python ../Bin_refinement_parallel.py \
   --max_total_threads 8 \
   --ext fa
 ```
-<br><br>
+<br>
 ## Warnings
 1, This script works well only when bin contamination is minimal. IF contaminated contig are exist, isolated genome assembler may bridge contaminated contigs and produce longer contamination. It is recommended that CheckM contamination values be less than 5%.<br>
 2, This tool performs reassembly under the assumption of a single representative genome per bin. When a bin contains high allelic diversity or multiple closely related strains, the reassembly process may produce more fragmented contigs that do not accurately represent any single genome, and in some cases, may lead to misassemblies.
