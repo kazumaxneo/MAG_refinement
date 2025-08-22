@@ -118,13 +118,13 @@ This utility script maps short reads to their corresponding bin reference sequen
 Output is outputdir/allelic_diversity_summary.csv.
 
 ```
-#First, run Bin_refinement_parallel.py script with "--extract_sr_only" option. It save bin related short reads and finis without any reassembly steps.<br>
-python Bin_refinement_parallel.py --read1 short_R1.fastq.gz --read2 short_R2.fastq.gz --pacbio HiF_reads.fq.gz --jobs 10 --max_total_threads 20 --ext fa --extract_sr_only<br>
-<br>
-#Then, run analyze_allelic_diversity.py scrit.<br>
-mkdir bins #original bin dir<br>
-cp bins*fa bins/<br>
-python script/analyze_allelic_diversity.py --sr_dir sr --ref_dir bins/ --outdir allelic_aanalysis --threads 12 <br>
+#First, run Bin_refinement_parallel.py script with "--extract_sr_only" option. It save bin related short reads and finis without any reassembly steps.
+python Bin_refinement_parallel.py --read1 short_R1.fastq.gz --read2 short_R2.fastq.gz --pacbio HiF_reads.fq.gz --jobs 10 --max_total_threads 20 --ext fa --extract_sr_only
+
+#Then, run analyze_allelic_diversity.py scrit.
+mkdir bins #original bin dir
+cp bins*fa bins/
+python script/analyze_allelic_diversity.py --sr_dir sr --ref_dir bins/ --outdir allelic_aanalysis --threads 12
 ```
 <br>
 
