@@ -37,6 +37,14 @@ chmod +x MAG_refinement/Bin_refinement.py MAG_refinement/Bin_refinement_parallel
 export PATH=$PATH:$PWD/MAG_refinement/
 Bin_refinement.py -h
 ```
+Docker<br>
+```
+docker pulll kazumax/binrefinement:1.1
+docker run -itv $PWD:/data -w /data --rm kazumax/binrefinement:1.1
+conda activate binrefinemnet
+Bin_refinement.py -h
+```
+
 ## Usage  
 This script should be run in the directory containing users bin FASTA files.
 It detects files matching the pattern bin*.fa (or the extension specified by --ext).
