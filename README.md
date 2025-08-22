@@ -33,7 +33,7 @@ Short and long reads related to each bin are extracted from whole metagenome sho
 git clone https://github.com/kazumaxneo/MAG_refinement.git
 mamba env create --file MAG_refinement/env.yaml
 conda activate binrefinemnet
-chmod +x MAG_refinement/Bin_refinement.py Bin_refinement_parallel.py
+chmod +x MAG_refinement/Bin_refinement.py MAG_refinement/Bin_refinement_parallel.py
 export PATH=$PATH:$PWD/MAG_refinement/
 Bin_refinement.py -h
 ```
@@ -54,7 +54,7 @@ Output directories (will be created if not present)
 
 --refined_bin_dir : Directory to store refined bin assemblies
 ```
-python Bin_refinement.py --read1 short_R1.fastq.gz --read2 short_R2.fastq.gz --pacbio HiF_reads.fq.gz --hifi_mapped_dir HIFI_saved_dir --sr_dir short_reads_saved_dir --refined_bin_dir refined_bin_dir
+python MAG_refinement/Bin_refinement.py --read1 short_R1.fastq.gz --read2 short_R2.fastq.gz --pacbio HiF_reads.fq.gz --hifi_mapped_dir HIFI_saved_dir --sr_dir short_reads_saved_dir --refined_bin_dir refined_bin_dir
 ```
 
 ## parallel version
@@ -69,7 +69,7 @@ Statistics files are saved after all assemblers have finished.
 
 Mapping logs are not displayed.
 ```
-python Bin_refinement_parallel.py --read1 short_R1.fq.gz --read2 short_R2.fq.gz --pacbio HiF_reads.fq.gz --jobs 3 --max_total_threads 24 --ext fa
+python MAG_refinement/Bin_refinement_parallel.py --read1 short_R1.fq.gz --read2 short_R2.fq.gz --pacbio HiF_reads.fq.gz --jobs 3 --max_total_threads 24 --ext fa
 ```
 ## Options
 
@@ -119,12 +119,12 @@ Output is outputdir/allelic_diversity_summary.csv.
 
 ```
 #First, run Bin_refinement_parallel.py script with "--extract_sr_only" option. It save bin related short reads and finis without any reassembly steps.
-python Bin_refinement_parallel.py --read1 short_R1.fastq.gz --read2 short_R2.fastq.gz --pacbio HiF_reads.fq.gz --jobs 10 --max_total_threads 20 --ext fa --extract_sr_only
+python MAG_refinement/Bin_refinement_parallel.py --read1 short_R1.fastq.gz --read2 short_R2.fastq.gz --pacbio HiF_reads.fq.gz --jobs 10 --max_total_threads 20 --ext fa --extract_sr_only
 
 #Then, run analyze_allelic_diversity.py scrit.
 mkdir bins #original bin dir
 cp bins*fa bins/
-python script/analyze_allelic_diversity.py --sr_dir sr --ref_dir bins/ --outdir allelic_aanalysis --threads 12
+python MAG_refinement/script/analyze_allelic_diversity.py --sr_dir sr --ref_dir bins/ --outdir allelic_aanalysis --threads 12
 ```
 <br>
 
