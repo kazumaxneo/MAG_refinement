@@ -139,7 +139,7 @@ Consequently, the approach may be less effective for complex environmental metag
 <br><br>
 
 ## How to cite  
-### High-quality Metagenome-Assembled Genomes of Bacteria Associated with Long-Term Cultivated Giant Coenocytic Green Alga Bryopsis.<br>
+High-quality Metagenome-Assembled Genomes of Bacteria Associated with Long-Term Cultivated Giant Coenocytic Green Alga Bryopsis.<br>
 Kanta K. Ochiai, Atsushi Toyoda, Takehiko Itoh, Gohta Goshima, and Kazuma Uesaka<br>
 Microbiology Resoure Announcements. 2025. In Press.<br><br>
 
