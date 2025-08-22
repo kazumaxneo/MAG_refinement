@@ -111,6 +111,22 @@ Maximum total number of CPU threads to use across all parallel jobs  (default 20
 
 <br>
 
+
+## analyse heterogenesity of each bin using bin-related short reads
+The analyze_allelic_diversity.py script to estimate allelic diversity in each bin. 
+It maps short reads to their corresponding bin reference sequences using minimap2, calls SNPs with bcftools, and calculates the ratio of SNPs to genome size. The results are saved as a summary CSV in the specified output directory.
+Output is outputdir/allelic_diversity_summary.csv.
+
+```
+#First, run Bin_refinement_parallel.py script with "--extract_sr_only" option.
+python Bin_refinement_parallel.py --read1 short_R1.fastq.gz --read2 short_R2.fastq.gz --pacbio HiF_reads.fq.gz --jobs 10 --max_total_threads 20 --ext fa --extract_sr_only</p>
+
+#Then, run analyze_allelic_diversity.py scrit.
+mkdir bins #original bin dir
+cp bins*fa bins/
+python analyze_allelic_diversity.py --sr_dir sr --ref_dir bins/ --outdir allelic_aanalysis --threads 12 </p>
+```
+
 ## Benchmark
 complex soil dataset (HiFi long read and illumina short read)
 <p align="center"><img src="Table11.png" alt="workflow" width="1100"></p>
