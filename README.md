@@ -132,7 +132,10 @@ python ../Bin_refinement_parallel.py \
 
 <br><br>
 ## Warnings
-This script works well only when bin contamination is minimal. IF contaminated contig are exist, isolated genome assembler may bridge contaminated contigs and produce longer contamination. It is recommended that CheckM contamination values be less than 5%.
+1, This script works well only when bin contamination is minimal. IF contaminated contig are exist, isolated genome assembler may bridge contaminated contigs and produce longer contamination. It is recommended that CheckM contamination values be less than 5%.<br>
+2, This tool performs reassembly under the assumption of a single representative genome per bin. When a bin contains high allelic diversity or multiple closely related strains, the reassembly process may produce more fragmented contigs that do not accurately represent any single genome, and in some cases, may lead to misassemblies.
+Consequently, the approach may be less effective for complex environmental metagenomes, where substantial within-species variation is common.
+3, This tool is generally more reliable for samples such as mock communities or relatively purified mixtures, where the strain-level diversity of each MAG is not high.
 <br><br>
 
 ## How to cite  
