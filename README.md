@@ -9,7 +9,6 @@ Short and long reads related to each bin are extracted from whole metagenome sho
 1. For short reads, Bowtie2 is used with the "--al-conc option and a normal insert size" to collect properly aligned short reads against bin sequnece.
 2. For HiFi long reads, Minimap2 is used with the "-x map-hifi" option. High-quality mapping (MAPQ > 20) and small clipped alignment reads (less than 100-bp) are retained.
 3. Each bin is reassembled using three different isolated genome assemblers to improve contiguity.  
-
 - Unicycler (hybrid assembly)
 - SPAdes (hybrid assembly)
 - Flye (HiFi long reads assembly)
