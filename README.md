@@ -129,7 +129,6 @@ python ../Bin_refinement_parallel.py \
   --max_total_threads 8 \
   --ext fa
 ```
-
 <br><br>
 ## Warnings
 1, This script works well only when bin contamination is minimal. IF contaminated contig are exist, isolated genome assembler may bridge contaminated contigs and produce longer contamination. It is recommended that CheckM contamination values be less than 5%.<br>
