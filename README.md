@@ -139,7 +139,11 @@ Consequently, the approach may be less effective for complex environmental metag
 <br><br>
 
 ## How to cite  
-These tool should be cited.<br> 
+High-quality Metagenome-Assembled Genomes of Bacteria Associated with Long-Term Cultivated Giant Coenocytic Green Alga Bryopsis.
+Kanta K. Ochiai1, Atsushi Toyoda, Takehiko Itoh, Gohta Goshima, and Kazuma Uesaka
+Microbiology Resoure Announcements. 2025. In Press.<br><br>
+
+These tool should be also cited.<br> 
 - Bankevich A, Nurk S, Antipov D, Gurevich AA, Dvorkin M, Kulikov AS, Lesin VM, Nikolenko SI, Pham S, Prjibelski AD, Pyshkin AV, Sirotkin AV, Vyahhi N, Tesler G, Alekseyev MA, Pevzner PA. SPAdes: a new genome assembly algorithm and its applications to single-cell sequencing. J Comput Biol. 2012 May;19(5):455-77. doi: 10.1089/cmb.2012.0021. Epub 2012 Apr 16. PMID: 22506599; PMCID: PMC3342519.  
 
 - Freire B, Ladra S, Parama JR. Memory-Efficient Assembly Using Flye. IEEE/ACM Trans Comput Biol Bioinform. 2022 Nov-Dec;19(6):3564-3577. doi: 10.1109/TCBB.2021.3108843. Epub 2022 Dec 8. PMID: 34469305.  
