@@ -133,6 +133,7 @@ python MAG_refinement/Bin_refinement_parallel.py --read1 short_R1.fastq.gz --rea
 mkdir bins #original bin dir
 cp bins*fa bins/
 python MAG_refinement/script/analyze_allelic_diversity.py --sr_dir sr --ref_dir bins/ --outdir allelic_aanalysis --threads 12
+#note analyze_allelic_diversity script expects prefix "map_bin." for each paired-end fastq.gz.
 ```
 <br>
 
