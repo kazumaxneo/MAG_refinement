@@ -147,7 +147,8 @@ complex soil dataset (HiFi long read and illumina short read)
 
 ## Test run (Note: this tiny dataset may fail in some assemblers, and some reassembled bins may become worse than the original.)
 ```
-cd test/
+git clone https://github.com/kazumaxneo/MAG_refinement.git
+cd MAG_refinement/test/
 python ../Bin_refinement_parallel.py \
   --read1 sample_R1.fq.gz \
   --read2 sample_R2.fq.gz \
